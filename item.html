@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="itemStyle.css">
+    <script src="script2.js"></script>
+    <title>Item</title>
+    <script src="https://kit.fontawesome.com/d0bb97f796.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="popup" id="popup">
+        <div class="login-page">
+            <div class="form">
+                <div class="login">
+                    <div class="login-header">
+                        <h3 style="color: #000;">LOGIN</h3>
+                        <p style="color: #000;">Please enter your credentials to login.</p>
+                    </div>
+                </div>
+                <form class="login-form">
+                    <input type="text" placeholder="username" />
+                    <input type="password" placeholder="password" />
+                    <button style=" background-image: linear-gradient(45deg,#328f8a,#08ac4b);">login</button>
+                    <p class="message"></a></p>
+                </form>
+                <button style="background-color: red;" onclick="closepopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="signupPopup" id="signupPopup">
+        <div class="login-page">
+            <div class="form">
+                <div class="login">
+                    <div class="login-header">
+                        <h3 style="color: #000;">Sign Up</h3>
+                        <p style="color: #000;">Please enter your credentials to signup.</p>
+                    </div>
+                </div>
+                <form class="login-form">
+                    <input type="text" placeholder="username" />
+                    <input type="email" placeholder="email" />
+                    <input type="password" id="password-input" placeholder="password" />
+                    <input type="password" id="confirm-password-input" placeholder="confirm password" />
+                    <p id="password-match-error" style="display: none; color: red;">Password and Confirm Password don't
+                        match.</p>
+                    <button style=" background-image: linear-gradient(45deg,#328f8a,#08ac4b);">Sign Up</button>
+                    <p class="message"></a></p>
+                </form>
+                <button style="background-color: red;" onclick="closeSignUpPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="big-container" id="big">
+
+        <nav class="navbar-small" id="navbar">
+            <div class="navbar-left-small">
+                <a href="#" class="navbar-text-small">Gaboo@gmail.com</a>
+                <a href="#" class="navbar-text-small">+123456789</a>
+            </div>
+            <div class="navbar-right-small">
+                <a href="#" class="navbar-icon"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="navbar-icon"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="navbar-icon"><i class="fa fa-instagram"></i></a>
+                <button type="submit" onclick="openpopup()" class="navbar-button-small" style="font-size: 16px;"> Login
+                </button>
+                <!-- <a  class="navbar-icon" ><i class="fa fa-user"></i> Login</a> -->
+
+
+                <a onclick="signUpPopup()" class="navbar-button-small">Register</a>
+            </div>
+        </nav>
+        <script>
+            let popup = document.getElementById("popup");
+            let signupPopup = document.getElementById("signupPopup");
+            let big = document.getElementById("big");
+            function openpopup() {
+                popup.classList.add("open-popup");
+                big.style.opacity = 0.2;
+            }
+
+            function closepopup() {
+                popup.classList.remove("open-popup");
+                big.style.opacity = 1;
+
+            }
+            function signUpPopup() {
+                signupPopup.classList.add("open-popup");
+                big.style.opacity = 0.2;
+            }
+            function closeSignUpPopup() {
+                signupPopup.classList.remove("open-popup");
+                big.style.opacity = 1;
+
+            }
+            const passwordInput = document.getElementById('password-input');
+            const confirmPasswordInput = document.getElementById('confirm-password-input');
+            const passwordMatchError = document.getElementById('password-match-error');
+
+            confirmPasswordInput.addEventListener('input', function () {
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    passwordMatchError.style.display = 'block';
+                } else {
+                    passwordMatchError.style.display = 'none';
+                }
+            });
+        </script>
+
+
+        <nav class="navbar">
+            <div class="navbar-container container">
+                <input type="checkbox" name="" id="">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Children</a></li>
+                    <li><a href="#">Collection</a></li>
+                    <li>
+                        <img src="" alt="Your Logo">
+                    </li>
+                    <li><a href="#">Winter</a></li>
+                    <li><a href="#">Spring</a></li>
+                    <li><a href="#">Summer</a></li>
+                    <li><a href="#">Fall</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="navbar2">
+            <div class="navbar-left">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Language: English</button>
+                    <div class="dropdown-content">
+                        <a href="#">Arabic</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Currency: USD</button>
+                    <div class="dropdown-content">
+                        <a href="#">EUR</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <a href="#">Shopping List</a>
+                <a href="#">Checkout</a>
+                <a href="#">My Account</a>
+            </div>
+            <div class="navbar-right">
+                <div class="search-container">
+                    <input class="search" type="text" placeholder="Search">
+                    <div class="search-icon">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div class="cart-container">
+                    <div class="cart-icon">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="cart-total">
+                        Total:$1
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container">
+
+            <!-- Left Column / Headphones Image -->
+            <div class="left-column">
+                <img src="https://via.placeholder.com/300x200" alt="Big Image" class="big-image">
+                <div class="small-images">
+                    <img src="https://via.placeholder.com/100x100" alt="Small Image 1" class="small-image">
+                    <img src="https://via.placeholder.com/100x100" alt="Small Image 2" class="small-image">
+                    <img src="https://via.placeholder.com/100x100" alt="Small Image 3" class="small-image">
+                </div>
+            </div>
+
+
+            <!-- Right Column -->
+            <div class="right-column">
+
+                <!-- Product Description -->
+                <div class="product-description">
+
+                    <h1 style="border-bottom: 1px solid #ff6600;">Winter Collection</h1>
+                    <!-- Product Pricing -->
+                    <div class="product-price">
+                        <span style="color: #ff6600;">148$</span>
+                    </div>
+                </div>
+                <div class="row-container">
+                    <div>
+                        <label for="size-select">Size:</label>
+                        <select id="size-select">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="quantity-input">Quantity:</label>
+                        <input type="number" id="quantity-input" value="1" min="1">
+                    </div>
+                    <div>
+                        <label for="color-select">Color:</label>
+                        <select id="color-select">
+                            <option class="color-option" value="red"> </option>
+                            <option class="color-option" value="blue"> </option>
+                            <option class="color-option" value="green"> </option>
+                        </select>
+                    </div>
+                </div>
+                <div style="display: flex;justify-content: center;margin-top: 1rem;">
+                    <button class="contact-btn">Buy this item</button>
+                </div>
+
+                <!-- Product Configuration -->
+                <div class="product-configuration">
+
+                </div>
+                <h2>Detail</h2>
+                <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation.
+                    Sturdy headband and on-ear cushions suitable for live performance</p>
+                <h2>Delivery</h2>
+                <h2>Style</h2>
+                <h2>Style</h2>
+            </div>
+        </main>
+
+
+
+        <div class="popular-now">
+            <h1 class="popular-now-heading" style="color: #ff6600; font-size: 4rem;">Similiar Items</h2>
+        </div>
+
+
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 1">
+                <div class="new-product">
+                    <h3 class="product-title">Product 1</h3>
+                    <p class="product-price">$19.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 2">
+                <div class="new-product">
+                    <h3 class="product-title">Product 2</h3>
+                    <p class="product-price">$19.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                <div class="new-product">
+                    <h3 class="product-title">Product 3</h3>
+                    <p class="product-price">$19.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200" alt="Product 4">
+                <div class="new-product">
+                    <h3 class="product-title">Product 4</h3>
+                    <p class="product-price">$19.99</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+    
+                <div class="footer-row">
+                    <div class="footer-column">
+                        <button class="btn-row">g a b o o o</button>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada, magna in molestie dictum,
+                            est
+                            magna bibendum turpis, a mollis libero magna eu turpis.</p>
+                        <p>Created by Lorem Ipsum</p>
+                        <p>2023</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Sign in</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Shopping</h4>
+                        <ul>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Winter</a></li>
+                            <li><a href="#">Spring</a></li>
+                            <li><a href="#">Summer</a></li>
+                            <li><a href="#">Fall</a></li>
+                            <li><a href="#">Collection</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4> </h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                        <p>Get in touch with us via mail, we are waiting for your call or message</p>
+                        <p><span class="bordered-text">ITMAM.com</span></p>
+                        <div class="social-media-icons">
+                            <img src="tiktok.png" alt="" style="width: 10%;">
+                            <img src="tiktok.png" alt="" style="width: 10%;">
+                            <img src="tiktok.png" alt="" style="width: 10%;">
+                            <img src="tiktok.png" alt="" style="width: 10%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
